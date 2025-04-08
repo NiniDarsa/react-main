@@ -174,6 +174,7 @@ const Overlay = ({
       )}
       {secondOverlayVisible && (
         <StyleOverlay variants={motionOverlay2} initial="hidden" animate="show">
+          <CircleAnimationCanvas />
           <motion.div variants={motionText} initial="hidden" animate="show">
             <p>
               I am always striving to{" "}

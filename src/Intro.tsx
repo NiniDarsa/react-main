@@ -30,7 +30,6 @@ const Intro = ({ sectionHome, sectionAbout, scrollTosection }: Props) => {
       setThirdOverlayVisible(true);
       setForthOverlayVisible(true);
       setFifthOverlayVisible(true);
-      // console.log(1);
     }, 1000);
 
     //Clear the overlay after 12 seconds, then repeat the process.
@@ -79,7 +78,7 @@ const StyledContainer = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 `;

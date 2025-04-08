@@ -72,10 +72,10 @@ const CircleAnimationCanvas = () => {
           mouseRef.current.y - this.y > -50
         ) {
           if (this.radius < 40) {
-            this.radius += 1; //increase radius when mouse is close
+            this.radius += 1.5; //increase radius when mouse is close
           }
         } else if (this.radius > 2) {
-          this.radius -= 1; //Decrease radius when the mouse is far
+          this.radius -= 1.5; //Decrease radius when the mouse is far
         }
         this.draw();
       }
