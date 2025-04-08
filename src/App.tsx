@@ -6,6 +6,7 @@ import Intro from "./Intro";
 import Projects from "./Projects";
 import Navigation from "./Navigation";
 import SkillSet from "./SkillSet";
+import MouseAnimationCanvas from "./MouseAnimationCanvas";
 
 function App() {
   const sectionHome = useRef<HTMLDivElement>(null);
@@ -25,6 +26,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <MouseAnimationCanvas />
+
       <Navigation
         scrollTosection={scrollToSection}
         sectionHome={sectionHome}

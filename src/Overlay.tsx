@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import styled from "styled-components";
+import CircleAnimationCanvas from "./CirclesAnimationCanvas";
 
 type Prop = {
   sectionAbout: React.RefObject<HTMLDivElement | null>;
@@ -219,6 +220,7 @@ const Overlay = ({
           animate="show"
           exit="exit"
         >
+          <CircleAnimationCanvas />
           <motion.div variants={motionContent} initial="hidden" animate="show">
             <StyleSvg
               width="304"
@@ -370,25 +372,6 @@ const Overlay = ({
               variants={line}
               initial="hidden"
               animate="show"
-            />
-          </StyledImg>
-          <StyledImg
-            viewBox="0 0 1440 363"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.path
-              d="M1440 27.4774C1352.73 19.8184 1122.41 49.0556 899.331 227.276C620.48 450.052 354.282 355.647 170.328 185.318C23.165 49.0556 -4.21721 8.32998 0.487081 5"
-              strokeOpacity="0.8"
-              strokeWidth="12"
-              stroke="#fad24d"
-              variants={line}
-              initial="hidden"
-              animate="show"
-              style={{
-                strokeDasharray: "1000", // Creates a dashed line effect
-                strokeDashoffset: "1000", // Starts with the line hidden
-              }}
             />
           </StyledImg>
         </StyledOverlayTalking>

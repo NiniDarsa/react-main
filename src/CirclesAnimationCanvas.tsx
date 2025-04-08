@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-const MouseAnimationCanvas = () => {
+const CircleAnimationCanvas = () => {
   // Create a ref to the canvas element
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -20,29 +20,83 @@ const MouseAnimationCanvas = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Circle animation state
-    const circle = {
-      radius: 10,
-      color: "#eccd1f",
-      speed: 0.05, // Speed of the circle following the mouse
-      x: 0,
-      y: 0,
-    };
+    //color
+    var colorArray = ["#BF6B04", "#BF7E04", "#F29F05", "#2C592A", "#01260E"];
 
+    // Circle animation state (using class syntax to fix 'this' issues)
+    class Circle {
+      x: number;
+      y: number;
+      dx: number;
+      dy: number;
+      radius: number;
+      color: string;
+
+      constructor(
+        x: number,
+        y: number,
+        dx: number,
+        dy: number,
+        radius: number
+      ) {
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.radius = radius;
+        this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+      }
+
+      draw() {
+        if (!ctx) return;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color || "black";
+        ctx?.fill();
+      }
+
+      update() {
+        if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+          this.dx = -this.dx;
+        }
+        if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+          this.dy = -this.dy;
+        }
+        this.x += this.dx;
+        this.y += this.dy;
+        //interactivity(shrink the circle if close to the mouse)
+        if (
+          mouseRef.current.x - this.x < 50 &&
+          mouseRef.current.x - this.x > -50 &&
+          mouseRef.current.y - this.y < 50 &&
+          mouseRef.current.y - this.y > -50
+        ) {
+          if (this.radius < 40) {
+            this.radius += 1; //increase radius when mouse is close
+          }
+        } else if (this.radius > 2) {
+          this.radius -= 1; //Decrease radius when the mouse is far
+        }
+        this.draw();
+      }
+    }
+
+    var circleArray: Circle[] = [];
+    for (var i = 0; i < 600; i++) {
+      var radius = Math.random() * 3 + 1;
+      var x = Math.random() * (innerWidth - radius * 2) + radius;
+      var y = Math.random() * (innerHeight - radius * 2) + radius;
+      var dx = Math.random() - 0.5;
+      var dy = Math.random() - 0.5;
+      circleArray.push(new Circle(x, y, dx, dy, radius));
+    }
     // Function to update the position of the circle
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
 
-      // Calculate the new position of the circle based on the most recent mouse position
-      circle.x += (mouseRef.current.x - circle.x) * circle.speed;
-      circle.y += (mouseRef.current.y - circle.y) * circle.speed;
-
-      // Draw the circle
-      ctx.beginPath();
-      ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = circle.color;
-      ctx.fill();
-      ctx.closePath();
+      for (var i = 0; i < circleArray.length; i++) {
+        circleArray[i].update();
+      } //   circleArray.forEach((circle)=>circle.update())
 
       // Request the next frame(The canvas paints the circle in the correct position because of the requestAnimationFrame(animate) inside the animate function.)
       //Every time animate is called, it updates the circle's position to smoothly follow the mouse pointer based on the values stored in mouseRef.current. The position of the circle is recalculated and rendered on the canvas in each frame.
@@ -87,4 +141,4 @@ const MouseAnimationCanvas = () => {
   );
 };
 
-export default MouseAnimationCanvas;
+export default CircleAnimationCanvas;
