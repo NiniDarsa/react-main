@@ -440,11 +440,15 @@ const StyledContainer = styled(motion.div)`
     left: 10rem;
     width: 300px;
     height: 25px;
+    @media (max-width: 800px) {
+      width: 100px;
+      height: 5px;
+      top: 7rem;
+      left: 6rem;
+    }
   }
 `;
 const StyleSvg = styled.svg`
-  /* width: 30rem;
-  height: 30rem; */
   @media (max-width: 800px) {
     width: 15rem;
     height: 15rem;

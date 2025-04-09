@@ -26,9 +26,17 @@ const Projects = ({ sectionProjects }: Props) => {
       <StyledJobsContainer>
         <StyledJob>
           <VideeoContainer>
-            <video>
+            <video autoPlay muted>
               <source src={schedule} type="video/mp4" />
             </video>
+            <ul>
+              <li>
+                <a href="https://github.com/NiniDarsa/schedule">GitHub</a>
+              </li>
+              <li>
+                <a href="https://github.com/NiniDarsa/schedule">LiveDemo</a>
+              </li>
+            </ul>
           </VideeoContainer>
           <StyledText>
             <h1>Schedulator</h1>
@@ -96,14 +104,38 @@ const Projects = ({ sectionProjects }: Props) => {
                 </clipPath>
               </defs>
             </svg>
+            <ul>
+              <li>
+                <a href="https://github.com/NiniDarsa/react-component-library">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/react-ui-elements-drs">
+                  NPM
+                </a>
+              </li>
+            </ul>
           </VideeoContainer>
         </StyledJob>
 
         <StyledJob>
           <VideeoContainer>
-            <video>
+            <video autoPlay muted>
               <source src={remoteJob} type="video/mp4" />
             </video>
+            <ul>
+              <li>
+                <a href="https://github.com/NiniDarsa/react-job-board">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/NiniDarsa/react-job-board">
+                  LiveDemo
+                </a>
+              </li>
+            </ul>
           </VideeoContainer>
 
           <StyledText>
@@ -127,17 +159,33 @@ const Projects = ({ sectionProjects }: Props) => {
             </p>
           </StyledText>
           <VideeoContainer>
-            <video>
+            <video autoPlay muted>
               <source src={games} type="video/mp4" />
             </video>
+            <ul>
+              <li>
+                <a href="https://github.com/NiniDarsa/Games">GitHub</a>
+              </li>
+              <li>
+                <a href="https://github.com/NiniDarsa/Games">LiveDemo</a>
+              </li>
+            </ul>
           </VideeoContainer>
         </StyledJob>
 
         <StyledJob>
           <VideeoContainer>
-            <video>
+            <video autoPlay muted>
               <source src={wordCounter} type="video/mp4" />
             </video>
+            <ul>
+              <li>
+                <a href="https://github.com/NiniDarsa/word-count">GitHub</a>
+              </li>
+              <li>
+                <a href="https://github.com/NiniDarsa/word-count">LiveDemo</a>
+              </li>
+            </ul>
           </VideeoContainer>
           <StyledText>
             <h1>Word Counter</h1>
@@ -160,6 +208,9 @@ const Container = styled(motion.div)`
 `;
 const StyledJobsContainer = styled.div`
   padding: 4rem;
+  @media (max-width: 500px) {
+    padding: 0;
+  }
 `;
 const StyledJob = styled.div`
   background: linear-gradient(to bottom right, #4a4a4a, #ffca28);
@@ -184,6 +235,12 @@ const StyledJob = styled.div`
   @media (max-width: 1000px) {
     height: 15rem;
     overflow: scroll;
+    width: 30rem;
+    padding: 1rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    width: 20rem;
   }
 
   h1 {
@@ -234,6 +291,25 @@ const VideeoContainer = styled.div`
   width: 52%;
   position: static;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    li {
+      list-style: none;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        color: #2c592a;
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+    }
+  }
   @media (max-width: 1000px) {
     width: 50%;
   }

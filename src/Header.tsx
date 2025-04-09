@@ -13,7 +13,7 @@ const Header = () => {
       y: "0%",
       opacity: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.4,
         delay: 0,
         // delay: 1,
       },
@@ -30,9 +30,9 @@ const Header = () => {
       y: "0",
       opacity: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.4,
         // delay: 1.5,
-        delay: 0.2,
+        delay: 0.5,
       },
     },
   };
@@ -47,30 +47,15 @@ const Header = () => {
       y: "0%",
       opacity: 1,
       transition: {
-        duration: 0.2,
-        delay: 0.4,
+        duration: 0.4,
+        delay: 1,
         // delay: 2,
       },
     },
   };
-  // ///duplicate
-  // const motionContainer = {
-  //   hidden: {
-  //     opacity: 1, // Start with opacity 0 (invisible)
-  //   },
-  //   show: {
-  //     opacity: sixthOverlayVisible ? 1 : 0, // Fade to opacity 1 after 7.9 seconds
-  //     transition: {
-  //       duration: 0.5, // 1 second to fade in
-  //     },
-  //   },
-  // };
+
   return (
-    <StyledHeaderContainer
-    // variants={motionContainer}
-    // initial="hidden"
-    // animate={sixthOverlayVisible ? "show" : "hidden"}
-    >
+    <StyledHeaderContainer>
       <StyledHeader variants={motionHeader1} initial="hidden" animate="show">
         Welcome! I'm Nino.
       </StyledHeader>
@@ -94,6 +79,9 @@ const StyledHeaderContainer = styled(motion.div)`
   font-size: 1.2rem;
   @media (max-width: 800px) {
     font-size: 1rem;
+  }
+  @media (max-width: 800px) {
+    font-size: 0.7rem;
   }
 `;
 const StyledHeader = styled(motion.h1)`

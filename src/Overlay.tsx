@@ -439,7 +439,6 @@ const StyledOverlayTalking = styled(motion.div)`
   align-items: center;
   color: white;
   font-size: 2rem;
-
   button {
     background-color: #fad24d;
     color: black;
@@ -448,6 +447,11 @@ const StyledOverlayTalking = styled(motion.div)`
     padding: 1rem 2rem;
     margin-top: 2rem;
     cursor: pointer;
+    @media (max-width: 500px) {
+      font-size: 1rem;
+      font-weight: 100;
+      padding: 0.2rem;
+    }
   }
 `;
 const StyledOverlayYellow = styled(motion.div)`
@@ -562,6 +566,9 @@ const StyledContainer = styled(motion.div)`
   align-items: center;
   @media (max-width: 800px) {
     font-size: 1.8rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 1rem;
   }
 `;
 const StyledSvg = styled(motion.svg)`
