@@ -95,8 +95,8 @@ const About = ({ sectionAbout }: Props) => {
         ref={sectionAbout}
         className="about"
         id="about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: inView ? 1 : 0 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
         transition={{ duration: 1 }}
       >
         <>

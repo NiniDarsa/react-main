@@ -18,15 +18,15 @@ const Projects = ({ sectionProjects }: Props) => {
       ref={sectionProjects}
       className="projects"
       id="projects"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: inView ? 1 : 0 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
       transition={{ duration: 1 }}
     >
       <ProjectsHeader inView={inView} />
       <StyledJobsContainer>
         <StyledJob>
           <VideeoContainer>
-            <video autoPlay muted>
+            <video autoPlay muted loop>
               <source src={schedule} type="video/mp4" />
             </video>
             <ul>
@@ -121,7 +121,7 @@ const Projects = ({ sectionProjects }: Props) => {
 
         <StyledJob>
           <VideeoContainer>
-            <video autoPlay muted>
+            <video autoPlay muted loop>
               <source src={remoteJob} type="video/mp4" />
             </video>
             <ul>
@@ -159,7 +159,7 @@ const Projects = ({ sectionProjects }: Props) => {
             </p>
           </StyledText>
           <VideeoContainer>
-            <video autoPlay muted>
+            <video autoPlay muted loop>
               <source src={games} type="video/mp4" />
             </video>
             <ul>
@@ -175,7 +175,7 @@ const Projects = ({ sectionProjects }: Props) => {
 
         <StyledJob>
           <VideeoContainer>
-            <video autoPlay muted>
+            <video autoPlay muted loop>
               <source src={wordCounter} type="video/mp4" />
             </video>
             <ul>
