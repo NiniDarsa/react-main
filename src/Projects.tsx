@@ -204,7 +204,7 @@ const Projects = ({ sectionProjects }: Props) => {
 };
 export default Projects;
 const Container = styled(motion.div)`
-  padding: 4rem;
+  padding-top: 4rem;
 `;
 const StyledJobsContainer = styled.div`
   padding: 4rem;
@@ -216,7 +216,7 @@ const StyledJob = styled.div`
   background: linear-gradient(to bottom right, #4a4a4a, #ffca28);
   border: 2px solid #f9d159;
   box-shadow: 0 4px 15px #987610;
-  height: 24rem;
+  width: 80%;
   padding: 2rem;
   margin: auto;
   position: relative;
@@ -229,18 +229,17 @@ const StyledJob = styled.div`
   overflow: hidden;
   cursor: pointer;
   @media (max-width: 1200px) {
+    width: 100%;
     height: 20rem;
     overflow: scroll;
   }
   @media (max-width: 1000px) {
-    height: 15rem;
+    width: 80%;
     overflow: scroll;
-    width: 30rem;
     padding: 1rem;
   }
   @media (max-width: 600px) {
-    font-size: 1rem;
-    width: 20rem;
+    width: 100%;
   }
 
   h1 {
