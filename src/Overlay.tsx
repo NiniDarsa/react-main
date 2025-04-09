@@ -65,7 +65,7 @@ const Overlay = ({
     },
     show: {
       x: "-0%",
-      transition: { duration: 1, delay: 7 },
+      transition: { duration: 1, delay: 9 },
     },
   };
 
@@ -77,7 +77,7 @@ const Overlay = ({
     show: {
       x: "-0%",
       //   opacity: 1,
-      transition: { duration: 1, delay: 8 },
+      transition: { duration: 1, delay: 10 },
     },
   };
 
@@ -89,7 +89,7 @@ const Overlay = ({
     show: {
       x: "-0%",
       //   opacity: 1,
-      transition: { duration: 1, delay: 12 },
+      transition: { duration: 1, delay: 15 },
     },
   };
   const motionOverlay6 = {
@@ -100,7 +100,7 @@ const Overlay = ({
     show: {
       x: "-0%",
       //   opacity: 1,
-      transition: { duration: 1, delay: 14 },
+      transition: { duration: 1, delay: 17 },
     },
   };
   const motionContent = {
@@ -111,7 +111,7 @@ const Overlay = ({
       opacity: 1,
       transition: {
         duration: 0.1,
-        delay: 9,
+        delay: 11,
       },
     },
   };
@@ -144,7 +144,7 @@ const Overlay = ({
       opacity: 1,
       pathLength: 1,
       stiffness: 10,
-      transition: { duration: 2, delay: 9 },
+      transition: { duration: 2, delay: 12 },
     },
   };
 
@@ -166,14 +166,18 @@ const Overlay = ({
   return (
     <>
       {firstOverlayVisible && (
-        <StyleOverlayYellow
+        <StyledOverlayYellow
           variants={motionOverlay1}
           initial="hidden"
           animate="show"
-        ></StyleOverlayYellow>
+        ></StyledOverlayYellow>
       )}
       {secondOverlayVisible && (
-        <StyleOverlay variants={motionOverlay2} initial="hidden" animate="show">
+        <StyledOverlay
+          variants={motionOverlay2}
+          initial="hidden"
+          animate="show"
+        >
           <CircleAnimationCanvas />
           <motion.div variants={motionText} initial="hidden" animate="show">
             <p>
@@ -205,14 +209,14 @@ const Overlay = ({
             </p>
             <p>and deepen my understanding in this area.</p>
           </motion.div>
-        </StyleOverlay>
+        </StyledOverlay>
       )}
       {thirdOverlayVisible && (
-        <StyleOverlayYellow
+        <StyledOverlayYellow
           variants={motionOverlay3}
           initial="hidden"
           animate="show"
-        ></StyleOverlayYellow>
+        ></StyledOverlayYellow>
       )}
       {forthOverlayVisible && (
         <StyledOverlayTalking
@@ -360,7 +364,7 @@ const Overlay = ({
               About me
             </motion.button>
           </StyledContainer>
-          <StyledImg
+          <StyledSvg
             viewBox="0 0 1440 363"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -374,29 +378,29 @@ const Overlay = ({
               initial="hidden"
               animate="show"
             />
-          </StyledImg>
+          </StyledSvg>
         </StyledOverlayTalking>
       )}
       {fifthOverlayVisible && (
-        <StyleOverlayYellow
+        <StyledOverlayYellow
           variants={motionOverlay5}
           initial="hidden"
           animate="show"
-        ></StyleOverlayYellow>
+        ></StyledOverlayYellow>
       )}
       {sixthOverlayVisible && (
-        <StyleOverlay
+        <StyledOverlay
           variants={motionOverlay6}
           initial="hidden"
           animate="show"
-        ></StyleOverlay>
+        ></StyledOverlay>
       )}
     </>
   );
 };
 export default Overlay;
 
-const StyleOverlay = styled(motion.div)`
+const StyledOverlay = styled(motion.div)`
   width: 100%;
   height: 100%;
   line-height: 4rem;
@@ -414,6 +418,7 @@ const StyleOverlay = styled(motion.div)`
   @media (max-width: 900px) {
     font-size: 1.5rem;
   }
+
   @media (max-width: 500px) {
     font-size: 1rem;
   }
@@ -445,7 +450,7 @@ const StyledOverlayTalking = styled(motion.div)`
     cursor: pointer;
   }
 `;
-const StyleOverlayYellow = styled(motion.div)`
+const StyledOverlayYellow = styled(motion.div)`
   width: 100%;
   height: 100%;
   background-color: #fad24d;
@@ -559,7 +564,7 @@ const StyledContainer = styled(motion.div)`
     font-size: 1.8rem;
   }
 `;
-const StyledImg = styled(motion.svg)`
+const StyledSvg = styled(motion.svg)`
   position: absolute;
   left: 0;
   right: 0;

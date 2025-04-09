@@ -8,7 +8,6 @@ type NavigationProps = {
   sectionProjects: React.RefObject<HTMLDivElement | null>;
   sectionSkills: React.RefObject<HTMLDivElement | null>;
   sectionFooter: React.RefObject<HTMLDivElement | null>;
-  // current: HTMLDivElement | null | undefined;
 };
 const Navigation = ({
   scrollTosection,
@@ -17,8 +16,7 @@ const Navigation = ({
   sectionProjects,
   sectionSkills,
   sectionFooter,
-}: // current,
-NavigationProps) => {
+}: NavigationProps) => {
   return (
     <StyledNav>
       <ul>

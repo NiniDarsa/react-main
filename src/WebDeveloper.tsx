@@ -57,7 +57,7 @@ const WebDeveloperSvg = ({
   };
   const motionContainer = {
     hidden: {
-      opacity: 0, // Start with opacity 0 (invisible)
+      opacity: 1, // Start with opacity 0 (invisible)
     },
     show: {
       opacity: sixthOverlayVisible ? 1 : 0, // Fade to opacity 1 after 7.9 seconds
@@ -409,18 +409,7 @@ const WebDeveloperSvg = ({
             fill="black"
           />
         </g>
-        <defs>
-          <clipPath id="clip0_0_1">
-            <rect
-              width="1571.56"
-              height="1395.08"
-              fill="white"
-              transform="matrix(0.999983 -0.00582227 0.00531643 0.999986 -102.5 -12.3031)"
-            />
-          </clipPath>
-        </defs>
       </StyleSvg>
-
       <svg
         className="pointer"
         viewBox="0 0 47 76"
@@ -454,6 +443,8 @@ const StyledContainer = styled(motion.div)`
   }
 `;
 const StyleSvg = styled.svg`
+  /* width: 30rem;
+  height: 30rem; */
   @media (max-width: 800px) {
     width: 15rem;
     height: 15rem;

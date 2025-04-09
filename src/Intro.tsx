@@ -39,15 +39,14 @@ const Intro = ({ sectionHome, sectionAbout, scrollTosection }: Props) => {
       setThirdOverlayVisible(false);
       setForthOverlayVisible(false);
       setFifthOverlayVisible(false);
-    }, 15350);
-    const main = setInterval(() => setSixthOverlayVisible(false), 15350);
+      setSixthOverlayVisible(false);
+    }, 18350);
 
     // Cleanup timeouts on component unmount
     return () => {
       clearTimeout(firstOverlayTimer);
       clearTimeout(secondOverlayTimer);
       clearTimeout(mainOverlayTimer);
-      clearTimeout(main);
     };
   }, []);
 
@@ -64,7 +63,7 @@ const Intro = ({ sectionHome, sectionAbout, scrollTosection }: Props) => {
         sixthOverlayVisible={sixthOverlayVisible}
       />
       <>
-        <Header sixthOverlayVisible={sixthOverlayVisible} />
+        <Header />
         <WebDeveloperSvg sixthOverlayVisible={sixthOverlayVisible} />
       </>
     </StyledContainer>

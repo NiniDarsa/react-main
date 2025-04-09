@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import ProjectsHeader from "./ProjectsHeader";
-import remoteJob from "../images/remote-jobs.gif";
-import schedule from "../images/schedule.gif";
-import games from "../images/games.gif";
-import wordCounter from "../images/wordCounter.gif";
+import remoteJob from "../images/remote-jobs.mp4";
+import schedule from "../images/schedule.mp4";
+import games from "../images/games.mp4";
+import wordCounter from "../images/wordCounter.mp4";
 import useIntersectionObserver from "./useIntersectionObserver";
 import { motion } from "motion/react";
 
@@ -25,9 +25,11 @@ const Projects = ({ sectionProjects }: Props) => {
       <ProjectsHeader inView={inView} />
       <StyledJobsContainer>
         <StyledJob>
-          <ImageContainer>
-            <img src={schedule} alt="schedule" />
-          </ImageContainer>
+          <VideeoContainer>
+            <video>
+              <source src={schedule} type="video/mp4" />
+            </video>
+          </VideeoContainer>
           <StyledText>
             <h1>Schedulator</h1>
             <p>
@@ -51,7 +53,7 @@ const Projects = ({ sectionProjects }: Props) => {
               are easy to integrate and enhance your React projects.
             </p>
           </StyledText>
-          <ImageContainer>
+          <VideeoContainer>
             <svg
               width="74"
               height="338"
@@ -94,13 +96,15 @@ const Projects = ({ sectionProjects }: Props) => {
                 </clipPath>
               </defs>
             </svg>
-          </ImageContainer>
+          </VideeoContainer>
         </StyledJob>
 
         <StyledJob>
-          <ImageContainer>
-            <img src={remoteJob} alt="remoteJob" />
-          </ImageContainer>
+          <VideeoContainer>
+            <video>
+              <source src={remoteJob} type="video/mp4" />
+            </video>
+          </VideeoContainer>
 
           <StyledText>
             <h1>Remote job Board</h1>
@@ -122,15 +126,19 @@ const Projects = ({ sectionProjects }: Props) => {
               in one convenient package.
             </p>
           </StyledText>
-          <ImageContainer>
-            <img src={games} alt="games" />
-          </ImageContainer>
+          <VideeoContainer>
+            <video>
+              <source src={games} type="video/mp4" />
+            </video>
+          </VideeoContainer>
         </StyledJob>
 
         <StyledJob>
-          <ImageContainer>
-            <img src={wordCounter} alt="wordCounter" />
-          </ImageContainer>
+          <VideeoContainer>
+            <video>
+              <source src={wordCounter} type="video/mp4" />
+            </video>
+          </VideeoContainer>
           <StyledText>
             <h1>Word Counter</h1>
             <p>
@@ -222,14 +230,14 @@ const StyledJob = styled.div`
     }
   }
 `;
-const ImageContainer = styled.div`
-  width: 54%;
+const VideeoContainer = styled.div`
+  width: 52%;
   position: static;
   z-index: 2;
   @media (max-width: 1000px) {
     width: 50%;
   }
-  img {
+  video {
     width: 100%;
     height: 100%;
     border-radius: 1rem;

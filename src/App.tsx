@@ -6,7 +6,6 @@ import Intro from "./Intro";
 import Projects from "./Projects";
 import Navigation from "./Navigation";
 import SkillSet from "./SkillSet";
-import MouseAnimationCanvas from "./MouseAnimationCanvas";
 
 function App() {
   const sectionHome = useRef<HTMLDivElement>(null);
@@ -15,19 +14,14 @@ function App() {
   const sectionSkills = useRef<HTMLDivElement>(null);
   const sectionFooter = useRef<HTMLDivElement>(null);
 
-  // const [current, setCurrent] = useState<HTMLDivElement | null>();
-
   // Function to scroll to the desired section
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-    // setCurrent(ref.current);
   };
 
   return (
     <>
       <GlobalStyle />
-      <MouseAnimationCanvas />
-
       <Navigation
         scrollTosection={scrollToSection}
         sectionHome={sectionHome}
@@ -35,7 +29,6 @@ function App() {
         sectionProjects={sectionProjects}
         sectionSkills={sectionSkills}
         sectionFooter={sectionFooter}
-        // current={current}
       />
       <Intro
         sectionHome={sectionHome}

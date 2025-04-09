@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "motion/react";
 
-const Header = ({ sixthOverlayVisible }: { sixthOverlayVisible: boolean }) => {
+const Header = () => {
   const motionHeader1 = {
     hidden: {
       // x: "-100%",
@@ -13,7 +13,8 @@ const Header = ({ sixthOverlayVisible }: { sixthOverlayVisible: boolean }) => {
       y: "0%",
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.2,
+        delay: 0,
         // delay: 1,
       },
     },
@@ -29,9 +30,9 @@ const Header = ({ sixthOverlayVisible }: { sixthOverlayVisible: boolean }) => {
       y: "0",
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.2,
         // delay: 1.5,
-        delay: 0.5,
+        delay: 0.2,
       },
     },
   };
@@ -46,29 +47,29 @@ const Header = ({ sixthOverlayVisible }: { sixthOverlayVisible: boolean }) => {
       y: "0%",
       opacity: 1,
       transition: {
-        duration: 0.5,
-        delay: 1,
+        duration: 0.2,
+        delay: 0.4,
         // delay: 2,
       },
     },
   };
-  ///duplicate
-  const motionContainer = {
-    hidden: {
-      opacity: 0, // Start with opacity 0 (invisible)
-    },
-    show: {
-      opacity: sixthOverlayVisible ? 1 : 0, // Fade to opacity 1 after 7.9 seconds
-      transition: {
-        duration: 0.5, // 1 second to fade in
-      },
-    },
-  };
+  // ///duplicate
+  // const motionContainer = {
+  //   hidden: {
+  //     opacity: 1, // Start with opacity 0 (invisible)
+  //   },
+  //   show: {
+  //     opacity: sixthOverlayVisible ? 1 : 0, // Fade to opacity 1 after 7.9 seconds
+  //     transition: {
+  //       duration: 0.5, // 1 second to fade in
+  //     },
+  //   },
+  // };
   return (
     <StyledHeaderContainer
-      variants={motionContainer}
-      initial="hidden"
-      animate={sixthOverlayVisible ? "show" : "hidden"}
+    // variants={motionContainer}
+    // initial="hidden"
+    // animate={sixthOverlayVisible ? "show" : "hidden"}
     >
       <StyledHeader variants={motionHeader1} initial="hidden" animate="show">
         Welcome! I'm Nino.
@@ -88,7 +89,7 @@ const Header = ({ sixthOverlayVisible }: { sixthOverlayVisible: boolean }) => {
 };
 export default Header;
 const StyledHeaderContainer = styled(motion.div)`
-  padding: 2rem;
+  padding: 1rem;
   line-height: 4rem;
   font-size: 1.2rem;
   @media (max-width: 800px) {

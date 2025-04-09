@@ -106,16 +106,16 @@ const ProjectsHeader = ({ inView }: { inView: boolean }) => {
   };
   const motionColor = {
     hidden: {
-      opacity: 0,
-      scaleX: 0,
+      opacity: 0, // Initially invisible
+      scaleX: 0, // Initially scaled to 0 (not visible)
     },
     show: {
-      opacity: 1,
-      scaleX: 1,
+      opacity: 1, // Fade in to full opacity
+      scaleX: 1, // Scale X to 1 (full width)
       transition: {
         delay: 1.8,
-        duration: 2,
-        ease: "easeInOut",
+        duration: 2, // Duration of the animation
+        ease: "easeInOut", // Smooth transition
       },
     },
   };

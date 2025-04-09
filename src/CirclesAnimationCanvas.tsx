@@ -21,7 +21,7 @@ const CircleAnimationCanvas = () => {
     canvas.height = window.innerHeight;
 
     //color
-    var colorArray = ["#BF6B04", "#BF7E04", "#F29F05", "#2C592A", "#01260E"];
+    var colorArray = ["#BF6B04", "#BF7E04", "#F29F05", "#2C592A", "#FAD24D"];
 
     // Circle animation state (using class syntax to fix 'this' issues)
     class Circle {
@@ -82,13 +82,16 @@ const CircleAnimationCanvas = () => {
     }
 
     var circleArray: Circle[] = [];
-    for (var i = 0; i < 600; i++) {
-      var radius = Math.random() * 3 + 1;
-      var x = Math.random() * (innerWidth - radius * 2) + radius;
-      var y = Math.random() * (innerHeight - radius * 2) + radius;
-      var dx = Math.random() - 0.5;
-      var dy = Math.random() - 0.5;
-      circleArray.push(new Circle(x, y, dx, dy, radius));
+
+    if (circleArray.length === 0) {
+      for (let i = 0; i < 400; i++) {
+        let radius = Math.random() * 3 + 1;
+        let x = Math.random() * (innerWidth - radius * 2) + radius;
+        let y = Math.random() * (innerHeight - radius * 2) + radius;
+        let dx = Math.random() - 0.5;
+        let dy = Math.random() - 0.5;
+        circleArray.push(new Circle(x, y, dx, dy, radius));
+      }
     }
     // Function to update the position of the circle
     const animate = () => {
@@ -134,7 +137,7 @@ const CircleAnimationCanvas = () => {
         position: "absolute",
         top: 0,
         left: 0,
-        zIndex: 10,
+        zIndex: 2,
         pointerEvents: "none",
       }}
     />

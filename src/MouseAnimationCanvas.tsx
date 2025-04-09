@@ -16,7 +16,6 @@ const MouseAnimationCanvas = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return; // If the context is not available, exit early
 
-    // Set the canvas size to be full screen
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 

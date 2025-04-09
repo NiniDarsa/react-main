@@ -69,6 +69,8 @@ const MoreInfo = () => {
           </div>
           <StyledSkill>
             <img
+              loading="lazy"
+              alt="zustand"
               src="https://github.com/pmndrs/zustand/raw/main/docs/bear.jpg"
               width="50"
               height="25"
@@ -112,8 +114,8 @@ const GridContainer = styled.div`
   row-gap: 2rem;
 `;
 const GridItem = styled.div`
-  display: flex; /* Enable flexbox */
-  justify-content: center; /* Center horizontally */
+  display: flex;
+  justify-content: center;
   align-items: center;
   font-weight: 800;
 `;

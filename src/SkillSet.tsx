@@ -7,6 +7,7 @@ import figma from "../images/figma.svg";
 import MoreInfo from "./MoreInfo";
 import useIntersectionObserver from "./useIntersectionObserver";
 import { motion } from "motion/react";
+import MouseAnimationCanvas from "./MouseAnimationCanvas";
 
 type Props = {
   sectionSkills: React.RefObject<HTMLDivElement | null>;
@@ -38,6 +39,7 @@ const SkillSet = ({ sectionSkills }: Props) => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
+      <MouseAnimationCanvas />
       <Styleddiv />
       <StyledHeader>My Skills</StyledHeader>
       <StyledText>(hover for more information)</StyledText>
@@ -45,7 +47,7 @@ const SkillSet = ({ sectionSkills }: Props) => {
         <div className="card">
           <StyleCard1 className="inner">
             <div className="front">
-              <img src={js} alt="js" />
+              <img src={js} alt="js" loading="lazy" />
             </div>
             <div className="back">
               <p>
@@ -60,7 +62,7 @@ const SkillSet = ({ sectionSkills }: Props) => {
         <div className="card">
           <StyleCard2 className="inner">
             <div className="front">
-              <img src={react} alt="react" />
+              <img src={react} alt="react" loading="lazy" />
             </div>
             <div className="back">
               <p>
@@ -74,7 +76,7 @@ const SkillSet = ({ sectionSkills }: Props) => {
         <div className="card">
           <StyleCard3 className="inner">
             <div className="front">
-              <img src={tsx} alt="tsx" />
+              <img src={tsx} alt="tsx" loading="lazy" />
             </div>
             <div className="back">
               <p>
@@ -88,7 +90,7 @@ const SkillSet = ({ sectionSkills }: Props) => {
         <div className="card">
           <StyleCard4 className="inner">
             <div className="front">
-              <img src={sass} alt="sass" />
+              <img src={sass} alt="sass" loading="lazy" />
             </div>
             <div className="back">
               <p>
@@ -103,7 +105,7 @@ const SkillSet = ({ sectionSkills }: Props) => {
         <div className="card">
           <StyleCard5 className="inner">
             <div className="front">
-              <img src={figma} alt="figma" />
+              <img src={figma} alt="figma" loading="lazy" />
             </div>
             <div className="back">
               <p>
@@ -208,6 +210,7 @@ const StyledSkills = styled.div`
     }
     img {
       width: 100%;
+      height: 100%;
     }
     @media (max-width: 900px) {
       width: 80%;
